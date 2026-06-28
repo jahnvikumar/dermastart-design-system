@@ -1,0 +1,80 @@
+/* DermaStart — Base Styles
+ * Global resets, body defaults, and utility classes
+ * consumed by all DermaStart HTML surfaces.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Images ── */
+img, svg { display: block; }
+img { max-width: 100%; height: auto; }
+
+/* ── Links ── */
+a { color: inherit; }
+
+/* ── Layout Container ── */
+.ds-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* ── Eyebrow ── */
+.ds-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-dune);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+.ds-eyebrow-accent {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-dune);
+  margin-top: 6px;
+}
+
+/* ── Section Reveal Animation ── */
+.ds-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+.ds-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x130" name="Semantic Tokens" subtitle="surface · text · border aliases" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 16px 20px; font-family: var(--font-body); }
+  .tokens { display: flex; flex-wrap: wrap; gap: 8px; }
+  .token { display: flex; align-items: center; gap: 8px; background: var(--color-white); border: 1px solid var(--color-blush); border-radius: var(--radius-md); padding: 6px 10px; }
+  .token-dot { width: 16px; height: 16px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.08); }
+  .token-name { font-size: 11px; font-weight: 500; color: var(--color-slate); font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="tokens">
+  <div class="token"><div class="token-dot" style="background:#F2EDE6;"></div><span class="token-name">--surface-page</span></div>
+  <div class="token"><div class="token-dot" style="background:#FAF7F4;"></div><span class="token-name">--surface-card</span></div>
+  <div class="token"><div class="token-dot" style="background:#FFFFFF;"></div><span class="token-name">--surface-elevated</span></div>
+  <div class="token"><div class="token-dot" style="background:#2C3A3A;"></div><span class="token-name">--surface-inverse</span></div>
+  <div class="token"><div class="token-dot" style="background:#2C3A3A;"></div><span class="token-name">--text-primary</span></div>
+  <div class="token"><div class="token-dot" style="background:#8A8078;"></div><span class="token-name">--text-secondary</span></div>
+  <div class="token"><div class="token-dot" style="background:#C9A882;"></div><span class="token-name">--text-accent</span></div>
+  <div class="token"><div class="token-dot" style="background:#7A9E9F;"></div><span class="token-name">--text-trust</span></div>
+  <div class="token"><div class="token-dot" style="background:#E8D5C4;"></div><span class="token-name">--border-default</span></div>
+  <div class="token"><div class="token-dot" style="background:#C9A882;"></div><span class="token-name">--border-focus</span></div>
+  <div class="token"><div class="token-dot" style="background:#C0605A;"></div><span class="token-name">--border-error</span></div>
+</div>
+</body>
+</html>

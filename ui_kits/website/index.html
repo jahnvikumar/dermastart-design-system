@@ -1,0 +1,1340 @@
+<!-- @dsCard group="Website" viewport="1280x820" name="Homepage" subtitle="DermaStart marketing site — Hero, Services, How It Works, Packages, About, Testimonials" -->
+<!-- @startingPoint section="Website" subtitle="DermaStart full marketing website" viewport="1280x900" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/logo-dermasetup.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dermasetup — Complete Clinic Setup for Dermatologists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--color-canvas); color: var(--color-slate); font-size: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-3); }
+    .btn-primary { display: inline-block; background: var(--color-dune); color: #fff; font-family: var(--font-body); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 32px; border: none; border-radius: 2px; cursor: pointer; text-decoration: none; transition: background 200ms ease; }
+    .btn-primary:hover { background: #B5935F; }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--color-slate); font-family: var(--font-body); font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 31px; border: 1.5px solid var(--color-slate); border-radius: 2px; cursor: pointer; text-decoration: none; transition: background 200ms ease, color 200ms ease; }
+    .btn-secondary:hover { background: var(--color-slate); color: #fff; }
+    .eyebrow { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-dune); display: block; margin-bottom: var(--space-2); }
+    .eyebrow-accent { display: block; width: 32px; height: 2px; background: var(--color-dune); margin-top: 6px; }
+    .section { padding: var(--space-7) 0; }
+    .section-alt { background: var(--color-white); }
+    .section-header { margin-bottom: var(--space-6); }
+    .section-header h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: 500; line-height: 1.2; letter-spacing: 0.02em; margin-top: var(--space-2); }
+    .section-header p { font-size: 18px; font-weight: 300; color: var(--color-stone); line-height: 1.7; max-width: 560px; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered p { margin: 0 auto; }
+    .section-header.centered .eyebrow-accent { margin: 6px auto 0; }
+
+    /* NAVBAR */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--color-blush); height: 102px; transition: box-shadow 200ms ease; }
+    .navbar.scrolled { box-shadow: 0 2px 16px rgba(44,58,58,0.08); }
+    .navbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .navbar-logo { display: flex; align-items: center; gap: 11px; font-family: var(--font-display); font-size: 23px; font-weight: 500; color: var(--color-slate); text-decoration: none; letter-spacing: 0.01em; cursor: pointer; }
+    .navbar-logo img { height: 90px; width: auto; display: block; }
+    .navbar-logo span { color: var(--color-dune); }
+    .navbar-menu { display: flex; align-items: center; gap: 44px; flex: 1; }
+    .navbar-links { display: flex; align-items: center; justify-content: center; gap: 34px; list-style: none; flex: 1; }
+    .navbar-links a { font-size: 15px; font-weight: 400; color: var(--color-slate); text-decoration: none; transition: color 200ms ease; cursor: pointer; }
+    .navbar-links a:hover { color: var(--color-dune); }
+    .navbar-links a.active { font-weight: 500; text-decoration: underline; text-decoration-color: var(--color-dune); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .navbar-cta .btn-primary { padding: 10px 24px; }
+    .navbar-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0; background: none; border: none; cursor: pointer; }
+    .navbar-toggle span { display: block; width: 24px; height: 2px; background: var(--color-slate); border-radius: 2px; transition: transform 250ms ease, opacity 200ms ease; margin: 0 auto; }
+    .navbar-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .navbar-toggle.open span:nth-child(2) { opacity: 0; }
+    .navbar-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* PAGE VIEWS */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* HERO */
+    .hero { margin-top: 102px; background: var(--color-canvas); min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; overflow: hidden; }
+    .hero-content { padding: 128px 96px 128px max(24px, calc((100vw - 1200px)/2 + 24px)); }
+    .hero-content h1 { font-family: var(--font-display); font-size: clamp(44px,6vw,72px); font-weight: 300; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 24px; margin-top: 24px; }
+    .hero-content h1 em { font-style: italic; color: var(--color-dune); }
+    .hero-content p { font-size: 18px; font-weight: 300; color: var(--color-stone); line-height: 1.7; max-width: 480px; margin-bottom: 48px; letter-spacing: -0.01em; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .hero-image-wrap { position: relative; height: 100%; min-height: 88vh; overflow: hidden; }
+    .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(242,237,230,0.5) 0%, transparent 60%); }
+    .hero-points { display: flex; gap: 36px; margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--color-blush); flex-wrap: wrap; }
+    .hero-point { display: flex; align-items: center; gap: 11px; font-size: 15px; font-weight: 500; color: var(--color-slate); }
+    .hero-point svg { color: var(--color-sage); flex: none; }
+
+    /* GET STARTED / BOOKING */
+    .start-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 72px; align-items: start; }
+    .start-steps { list-style: none; margin: 32px 0 0; padding: 0; }
+    .start-step { display: flex; gap: 20px; padding: 24px 0; border-top: 1px solid var(--color-blush); }
+    .start-step:last-child { border-bottom: 1px solid var(--color-blush); }
+    .start-step-num { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--color-dune); line-height: 1.3; flex: none; width: 32px; }
+    .start-step h4 { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--color-slate); margin-bottom: 6px; letter-spacing: 0.01em; }
+    .start-step p { font-size: 15px; font-weight: 300; color: var(--color-stone); line-height: 1.6; }
+    .start-reassure { margin-top: 32px; font-size: 15px; color: var(--color-stone); display: flex; align-items: center; gap: 10px; }
+    .start-reassure svg { color: var(--color-sage); flex: none; }
+    .booking-card { background: var(--color-white); border: 1px solid var(--color-blush); border-radius: 8px; padding: 40px; box-shadow: 0 4px 28px rgba(44,58,58,0.06); }
+    .booking-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--color-slate); margin-bottom: 4px; }
+    .booking-card .sub { font-size: 15px; color: var(--color-stone); margin-bottom: 28px; }
+    .field { margin-bottom: 20px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field label { display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-slate); margin-bottom: 8px; }
+    .field input, .field select, .field textarea { width: 100%; font-family: var(--font-body); font-size: 15px; color: var(--color-slate); background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 4px; padding: 13px 14px; transition: border-color 160ms ease, box-shadow 160ms ease; }
+    .field input::placeholder, .field textarea::placeholder { color: #B8AFA6; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-dune); box-shadow: 0 0 0 3px rgba(201,168,130,0.15); }
+    .field textarea { resize: vertical; min-height: 96px; }
+    .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%238A8078' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 38px; }
+    .booking-card .btn-primary { width: 100%; text-align: center; margin-top: 8px; padding: 16px; }
+    .booking-note { font-size: 13px; color: var(--color-stone); text-align: center; margin-top: 14px; }
+    .booking-success { display: none; text-align: center; padding: 24px 0; }
+    .booking-success.show { display: block; }
+    .booking-success .check { width: 64px; height: 64px; border-radius: 50%; background: rgba(122,158,159,0.14); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--color-success); }
+    .booking-success h3 { margin-bottom: 12px; }
+    .booking-success p { font-size: 15px; color: var(--color-stone); line-height: 1.7; max-width: 360px; margin: 0 auto; }
+    @media (max-width: 900px) { .start-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* TRUST BAR */
+    .trust-bar { background: #fff; border-top: 1px solid var(--color-blush); border-bottom: 1px solid var(--color-blush); padding: 32px 0; }
+    .trust-bar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: nowrap; overflow: hidden; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-stone); }
+    .trust-item svg { color: var(--color-sage); flex-shrink: 0; }
+    .trust-divider { width: 1px; height: 20px; background: var(--color-blush); }
+
+    /* SERVICES GRID */
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .services-grid.balanced { display: flex; flex-wrap: wrap; justify-content: center; }
+    .services-grid.balanced .service-card { flex: 0 1 340px; }
+    .service-card { background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 6px; padding: 32px; text-decoration: none; display: block; transition: box-shadow 200ms ease, transform 200ms ease, border-left 200ms ease; box-shadow: 0 2px 12px rgba(44,58,58,0.06); color: inherit; position: relative; overflow: hidden; }
+    .service-card:hover { box-shadow: 0 6px 24px rgba(44,58,58,0.10); transform: translateY(-3px); border-left: 3px solid var(--color-dune); }
+    .service-card-icon { width: 48px; height: 48px; margin-bottom: 24px; color: var(--color-dune); }
+    .service-card h3 { font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--color-slate); margin-bottom: 8px; }
+    .service-card p { font-size: 14px; color: var(--color-stone); line-height: 1.6; }
+    .service-card-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--color-dune); margin-top: 16px; }
+
+    /* STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step-card { background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 6px; padding: 48px 32px; box-shadow: 0 2px 12px rgba(44,58,58,0.06); }
+    .step-number { width: 56px; height: 56px; border-radius: 50%; background: var(--color-canvas); border: 1.5px solid var(--color-blush); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--color-dune); margin-bottom: 24px; }
+    .step-card h3 { font-size: 18px; font-weight: 600; color: var(--color-slate); margin-bottom: 8px; }
+    .step-card p { font-size: 16px; color: var(--color-stone); line-height: 1.65; }
+
+    /* PACKAGES */
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .package-card { background: #fff; border: 1px solid var(--color-blush); border-radius: 6px; padding: 48px 32px; box-shadow: 0 2px 12px rgba(44,58,58,0.06); display: flex; flex-direction: column; position: relative; transition: box-shadow 200ms ease, transform 200ms ease; }
+    .package-card:hover { box-shadow: 0 16px 48px rgba(44,58,58,0.16); transform: translateY(-4px); }
+    .package-card.featured { border-color: var(--color-dune); border-width: 2px; }
+    .package-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--color-dune); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+    .package-name { font-family: var(--font-display); font-size: 26px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.02em; }
+    .package-tagline { font-size: 14px; color: var(--color-stone); margin-bottom: 32px; line-height: 1.5; }
+    .package-divider { width: 32px; height: 2px; background: var(--color-blush); margin-bottom: 32px; }
+    .package-card.featured .package-divider { background: var(--color-dune); }
+    .package-features { list-style: none; flex: 1; margin-bottom: 32px; }
+    .package-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--color-stone); margin-bottom: 12px; line-height: 1.5; }
+    .package-features li svg { color: var(--color-sage); flex-shrink: 0; margin-top: 2px; }
+    .package-cta { margin-top: auto; }
+    .package-features li.consumable-group { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-dune); margin: 22px 0 10px; }
+    .package-features li.consumable-group:first-child { margin-top: 0; }
+    .package-price { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--color-dune); margin-bottom: 24px; letter-spacing: 0.01em; }
+    .package-cta a { display: block; text-align: center; width: 100%; }
+
+    /* TESTIMONIALS */
+    .testi-section { background: var(--color-slate); padding: 96px 0; }
+    .testi-header { margin-bottom: 48px; }
+    .testi-header h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: 300; color: #fff; letter-spacing: 0.02em; margin-top: 8px; }
+    .testi-header h2 em { font-style: italic; color: var(--color-dune); }
+    .testi-carousel-wrap { position: relative; overflow: hidden; }
+    .testi-track { display: flex; transition: transform 600ms cubic-bezier(0.4,0,0.2,1); }
+    .testi-card { flex: 0 0 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(232,213,196,0.12); border-radius: 6px; padding: 48px 32px; box-sizing: border-box; }
+    .testi-dots { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+    .testi-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(201,168,130,0.25); border: none; cursor: pointer; padding: 0; transition: background 300ms ease, transform 300ms ease; }
+    .testi-dot.active { background: var(--color-dune); transform: scale(1.45); }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 24px; }
+    .testi-stars svg { color: var(--color-dune); }
+    .testi-quote { font-family: var(--font-display); font-style: italic; font-size: 20px; font-weight: 300; color: rgba(250,247,244,0.92); line-height: 1.6; margin-bottom: 32px; }
+    .testi-divider { width: 32px; height: 1px; background: rgba(201,168,130,0.4); margin-bottom: 24px; }
+    .testi-author { display: flex; align-items: center; gap: 16px; }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: rgba(201,168,130,0.2); border: 1.5px solid rgba(201,168,130,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--color-dune); flex-shrink: 0; }
+    .testi-name { font-size: 14px; font-weight: 600; color: #fff; }
+    .testi-role { font-size: 12px; color: rgba(232,213,196,0.65); margin-top: 2px; }
+    .testi-verified { display: flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-sage); margin-top: 4px; }
+
+    /* SECTION DIVIDER (slate-to-slate) */
+    .slate-divider { background: var(--color-slate); display: flex; align-items: center; justify-content: center; padding: 0; line-height: 0; }
+    .slate-divider-inner { display: flex; align-items: center; gap: 16px; width: 100%; max-width: 480px; padding: 0 48px; }
+    .slate-divider-line { flex: 1; height: 1px; background: rgba(201,168,130,0.25); }
+    .slate-divider-gem { width: 6px; height: 6px; background: var(--color-dune); transform: rotate(45deg); opacity: 0.7; flex-shrink: 0; }
+
+    /* CTA BANNER */
+    .cta-banner { background: var(--color-slate); padding: 128px 0; text-align: center; }
+    .cta-banner h2 { font-family: var(--font-display); font-size: clamp(32px,4vw,44px); font-weight: 300; color: #fff; letter-spacing: 0.02em; margin-bottom: 16px; }
+    .cta-banner h2 em { font-style: italic; color: var(--color-dune); }
+    .cta-banner p { font-size: 18px; font-weight: 300; color: var(--color-blush); line-height: 1.7; max-width: 520px; margin: 0 auto 48px; }
+    .cta-actions { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .cta-banner .btn-secondary { border-color: var(--color-blush); color: var(--color-blush); }
+    .cta-banner .btn-secondary:hover { background: var(--color-blush); color: var(--color-slate); }
+
+    /* FOOTER */
+    .footer { background: var(--color-parchment); border-top: 1px solid var(--color-blush); padding: 96px 0 48px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 64px; }
+    .footer-logo { display: block; margin-bottom: 20px; cursor: pointer; }
+    .footer-logo img { height: 84px; width: auto; display: block; }
+    .footer-tagline { font-size: 14px; color: var(--color-stone); line-height: 1.6; max-width: 280px; margin-bottom: 24px; }
+    .footer-contact { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-stone); margin-bottom: 8px; text-decoration: none; }
+    .footer-contact svg { color: var(--color-sage); flex-shrink: 0; }
+    .footer-col h5 { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-slate); margin-bottom: 24px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { font-size: 14px; color: var(--color-stone); text-decoration: none; transition: color 200ms ease; cursor: pointer; }
+    .footer-links a:hover { color: var(--color-dune); }
+    .footer-bottom { padding-top: 32px; border-top: 1px solid var(--color-blush); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: var(--color-stone); }
+    .footer-policy { display: flex; gap: 24px; }
+    .footer-policy a { font-size: 12px; color: var(--color-stone); text-decoration: none; }
+    .footer-policy a:hover { color: var(--color-dune); }
+
+    /* PAGE HERO */
+    .page-hero { margin-top: 102px; background: var(--color-canvas); padding: 128px 0 96px; border-bottom: 1px solid var(--color-blush); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(40px,5.5vw,64px); font-weight: 300; line-height: 1.1; letter-spacing: 0.02em; margin-top: 24px; margin-bottom: 24px; }
+    .page-hero h1 em { font-style: italic; color: var(--color-dune); }
+    .page-hero p { font-size: 18px; font-weight: 300; color: var(--color-stone); line-height: 1.7; max-width: 560px; }
+    .page-hero-dark { background: var(--color-slate); }
+    .page-hero-dark h1 { color: #fff; }
+    .page-hero-dark p { color: var(--color-blush); opacity: 0.85; }
+
+    /* ABOUT */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 96px; }
+    .stat-card { background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 6px; padding: 48px 32px; text-align: center; }
+    .stat-num { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--color-dune); display: block; line-height: 1; margin-bottom: 8px; }
+    .founders-grid { display: grid; grid-template-columns: 1fr; gap: 64px; max-width: 920px; margin: 0 auto; }
+    .founder-card { display: flex; flex-direction: row; align-items: center; gap: 44px; }
+    .founder-card:nth-child(even) { flex-direction: row-reverse; }
+    .founder-photo { width: 300px; height: 360px; flex: none; display: block; }
+    .founder-body { flex: 1; display: flex; flex-direction: column; }
+    .founder-text { font-family: var(--font-display); font-size: 24px; font-weight: 300; font-style: italic; line-height: 1.55; letter-spacing: 0.012em; color: var(--color-slate); margin: 0 0 26px; position: relative; padding-top: 28px; text-wrap: pretty; }
+    .founder-text::before { content: "\201C"; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 76px; line-height: 0; color: var(--color-dune); opacity: 0.45; position: absolute; left: -4px; top: 40px; }
+    .founder-meta { display: flex; flex-direction: column; gap: 4px; }
+    .founder-name { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--color-slate); }
+    .founder-role { font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-dune); }
+    @media (max-width: 768px) { .founders-grid { gap: 48px; } .founder-card, .founder-card:nth-child(even) { flex-direction: column; gap: 24px; } .founder-photo { width: 100%; max-width: 320px; } }
+    .stat-lbl { font-size: 14px; color: var(--color-stone); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .value-card { background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 6px; padding: 32px; }
+    .value-card svg { width: 44px; height: 44px; color: var(--color-dune); margin-bottom: 24px; }
+    .value-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: var(--color-stone); line-height: 1.6; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 80px; max-width: 720px; }
+    .timeline::before { content: ''; position: absolute; left: 27px; top: 28px; bottom: 28px; width: 2px; background: var(--color-blush); }
+    .timeline-item { position: relative; margin-bottom: 48px; }
+    .timeline-num { position: absolute; left: -80px; top: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--color-canvas); border: 1.5px solid var(--color-blush); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--color-dune); z-index: 1; }
+    .timeline-content { background: #fff; border: 1px solid var(--color-blush); border-radius: 6px; padding: 48px 32px; box-shadow: 0 2px 12px rgba(44,58,58,0.06); }
+    .timeline-week { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-dune); margin-bottom: 8px; }
+    .timeline-content h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .timeline-content p { font-size: 16px; color: var(--color-stone); line-height: 1.65; margin-bottom: 16px; }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .timeline-tag { background: var(--color-parchment); border: 1px solid var(--color-blush); border-radius: 2px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: var(--color-slate); }
+
+    :focus-visible { outline: 2px solid var(--color-dune); outline-offset: 3px; }
+
+    /* ─────────────  RESPONSIVE  ───────────── */
+    @media (max-width: 1024px) {
+      .hero-content { padding: 112px 48px 112px max(24px, calc((100vw - 960px)/2 + 24px)); }
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .packages-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
+      .two-col { gap: 56px; }
+      .trust-bar-inner { flex-wrap: wrap; gap: 20px 40px; }
+    }
+
+    @media (max-width: 768px) {
+      /* Navbar → hamburger */
+      .navbar-toggle { display: flex; }
+      .navbar-menu { position: absolute; top: 102px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border-bottom: 1px solid var(--color-blush); box-shadow: 0 12px 28px rgba(44,58,58,0.10); padding: 8px 24px 24px; opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity 220ms ease, transform 220ms ease, visibility 220ms; }
+      .navbar-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+      .navbar-links { flex-direction: column; align-items: stretch; justify-content: flex-start; flex: none; gap: 0; width: 100%; }
+      .navbar-links li { border-bottom: 1px solid var(--color-blush); }
+      .navbar-links a { display: block; padding: 16px 4px; font-size: 16px; }
+      .navbar-cta { margin-top: 20px; }
+      .navbar-cta .btn-primary { display: block; text-align: center; padding: 14px; }
+
+      /* Hero → stacked, image on top */
+      .hero { grid-template-columns: 1fr; min-height: 0; }
+      .hero-content { order: 2; padding: 56px 24px 64px; }
+      .hero-content p { max-width: none; margin-bottom: 36px; }
+      .hero-image-wrap { order: 1; min-height: 0; height: 300px; }
+      .hero-image-wrap::after { background: linear-gradient(to top, rgba(242,237,230,0.4) 0%, transparent 50%); }
+      .hero-points { gap: 18px 28px; margin-top: 44px; padding-top: 32px; }
+
+      /* Sections — lighter padding */
+      .section { padding: 64px 0; }
+      .page-hero { padding: 96px 0 64px; }
+      .cta-banner { padding: 88px 0; }
+      .testi-section { padding: 72px 0; }
+
+      /* Grids → single / paired columns */
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2,1fr); }
+      .two-col { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .field-row { grid-template-columns: 1fr; gap: 0; }
+      .booking-card { padding: 28px 22px; }
+      .testi-card { padding: 36px 24px; }
+      .testi-quote { font-size: 18px; }
+
+      /* Timeline → tighter rail */
+      .timeline { padding-left: 60px; }
+      .timeline-num { left: -60px; width: 48px; height: 48px; font-size: 19px; }
+      .timeline::before { left: 23px; }
+      .timeline-content { padding: 32px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 18px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary { text-align: center; }
+      .hero-points { flex-direction: column; gap: 16px; }
+      .cta-actions { flex-direction: column; align-items: stretch; }
+      .cta-actions .btn-primary, .cta-actions .btn-secondary { text-align: center; }
+      .stats-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .slate-divider-inner { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <template id="__bundler_thumbnail" data-bg-color="#f2ede6">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#f2ede6"/>
+      <text x="600" y="420" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="160" font-style="italic" fill="#c9a882">D</text>
+      <rect x="500" y="500" width="200" height="3" fill="#c9a882"/>
+    </svg>
+  </template>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <span class="navbar-logo" onclick="showPage('home')"><img src="assets/logo-dermasetup.png" alt="DermaSetup — End to End Dermatology Clinic Solutions" /></span>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar-menu" id="navbar-menu">
+        <ul class="navbar-links">
+          <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+          <li><a onclick="showPage('packages')" id="nav-packages">Packages</a></li>
+          <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+          <li><a onclick="showPage('shop')" id="nav-shop">Shop</a></li>
+          <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+        </ul>
+        <div class="navbar-cta">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Book Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ PAGE: HOME ═══════════════════════ -->
+  <div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">End to End Dermatology Clinic Solutions</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Your clinic,<br />built the way you<br /><em>envisioned it.</em></h1>
+        <p>From licensing to equipment, branding to digital presence — Dermasetup handles the business of building your dermatology practice so you can focus on your patients.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Start Your Practice</a>
+          <a href="#" class="btn-secondary" onclick="showPage('how'); return false;">See How It Works</a>
+        </div>
+        <div class="hero-points" style="display:none;">
+          <div class="hero-point"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Licensing &amp; compliance</div>
+          <div class="hero-point"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Equipment &amp; interiors</div>
+          <div class="hero-point"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Branding &amp; launch</div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="assets/hero-skincare.png" alt="Close-up of glowing skin with skincare cream" />
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          MCI-compliant setup guidance
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Verified equipment vendors
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Dedicated practice consultant
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          End-to-end in 90 days
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">What We Handle</span>
+          <span class="eyebrow-accent"></span>
+          <h2>Everything your practice needs, in one place</h2>
+          <p>We cover the full spectrum of clinic setup — so nothing slips through the cracks before opening day.</p>
+        </div>
+        <div class="services-grid">
+          <a href="#" class="service-card" onclick="showPage('services'); return false;">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+            <h3>Space & Interior Design</h3>
+            <p>Clinic layouts built for patient flow, hygiene standards, and your aesthetic.</p>
+            <span class="service-card-arrow">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+          </a>
+          <a href="#" class="service-card" onclick="showPage('services'); return false;">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
+            <h3>Licensing & Compliance</h3>
+            <p>MCI, PCB, fire NOC — we guide you through every approval you need to open legally.</p>
+            <span class="service-card-arrow">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+          </a>
+          <a href="#" class="service-card" onclick="showPage('services'); return false;">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .3 2.7-1.1 2.7H3.9c-1.4 0-2.1-1.7-1.1-2.7L4.2 15.3"/></svg>
+            <h3>Equipment Procurement</h3>
+            <p>Laser systems, cryotherapy units, consumables — sourced from verified vendors at negotiated rates.</p>
+            <span class="service-card-arrow">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+          </a>
+          <a href="#" class="service-card" onclick="showPage('services'); return false;">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+            <h3>Branding & Identity</h3>
+            <p>Logo, clinic name, brand guidelines, stationery, and signage from day one.</p>
+            <span class="service-card-arrow">Learn more <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="eyebrow">The Process</span>
+          <span class="eyebrow-accent"></span>
+          <h2>From call to clinic in 90 days</h2>
+          <p>A clear, phased process with a dedicated consultant at every step.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Discovery & Scope</h3>
+            <p>Free 30-min call, then a deep discovery session. Dedicated consultant assigned, tailored setup brief delivered.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Design & Approvals</h3>
+            <p>Interior concepts drawn, equipment specified, licensing filed. All three workstreams run simultaneously.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Build, Launch & Grow</h3>
+            <p>Fit-out, equipment, staff, website — all delivered. 90-day post-launch support included.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi-section">
+      <div class="container">
+        <div class="testi-header">
+          <span class="eyebrow">Dermatologists We've Helped</span>
+          <span class="eyebrow-accent"></span>
+          <h2>Trusted by doctors who had <em>never done this before.</em></h2>
+        </div>
+        <div class="testi-carousel-wrap">
+          <div class="testi-track" id="testi-track">
+          <div class="testi-card">
+            <div class="testi-stars">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-quote">"I had zero business experience. Dermasetup handled everything — I just showed up on opening day."</p>
+            <div class="testi-divider"></div>
+            <div class="testi-author">
+              <div class="testi-avatar">P</div>
+              <div>
+                <div class="testi-name">Dr. Priya Mehta</div>
+                <div class="testi-role">Aesthetic Dermatologist, Pune</div>
+                <div class="testi-verified">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Verified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-quote">"78 days from first call to opening. Every single deadline was met. I can't believe how smooth it was."</p>
+            <div class="testi-divider"></div>
+            <div class="testi-author">
+              <div class="testi-avatar">R</div>
+              <div>
+                <div class="testi-name">Dr. Rohan Iyer</div>
+                <div class="testi-role">Clinical Dermatologist, Bengaluru</div>
+                <div class="testi-verified">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Verified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-quote">"The branding they created for my clinic is better than anything I could have commissioned separately."</p>
+            <div class="testi-divider"></div>
+            <div class="testi-author">
+              <div class="testi-avatar">S</div>
+              <div>
+                <div class="testi-name">Dr. Shruti Kapoor</div>
+                <div class="testi-role">Hair & Scalp Specialist, Delhi</div>
+                <div class="testi-verified">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Verified
+                </div>
+              </div>
+            </div>
+          </div>
+          </div><!-- end track -->
+          <div class="testi-dots" id="testi-dots"></div>
+        </div><!-- end carousel-wrap -->
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="slate-divider"><div class="slate-divider-inner"><div class="slate-divider-line"></div><div class="slate-divider-gem"></div><div class="slate-divider-line"></div></div></div>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container">
+        <span class="eyebrow" style="display:block;text-align:center;margin-bottom:16px;">Work With Us</span>
+        <h2>Let's build your<br /><em>practice together.</em></h2>
+        <p>Book a free 30-minute consultation. We'll understand your vision and tell you exactly how we'd approach your setup.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn-secondary" onclick="showPage('how'); return false;">See How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <span class="footer-logo" onclick="showPage('home')"><img src="assets/logo-dermasetup.png" alt="DermaSetup — End to End Dermatology Clinic Solutions" /></span>
+            <p class="footer-tagline">End to end dermatology clinic solutions.</p>
+            <div class="footer-contact" style="align-items:flex-start;"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg><span>B2 Extn. / 10, Basement, Safdarjung Enclave,<br />Near B2 Arya Samaj Mandir, Sara Mathew Road,<br />New Delhi 110029</span></div>
+            <div class="footer-contact"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>+91 90011 94777</div>
+            <div class="footer-contact"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>+91 97018 29555</div>
+          </div>
+          <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('how')">Our Process</a></li><li><a onclick="showPage('services')">Services</a></li></ul></div>
+          <div class="footer-col"><h5>Packages</h5><ul class="footer-links"><li><a onclick="showPage('packages','pkg-essential')">Essential</a></li><li><a onclick="showPage('packages','pkg-professional')">Professional</a></li><li><a onclick="showPage('packages','pkg-premium')">Premium</a></li></ul></div>
+          <div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('terms')">Terms of Service</a></li><li><a onclick="showPage('refund')">Refund Policy</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Dermasetup. All rights reserved.</p>
+          <div class="footer-policy"><a onclick="showPage('privacy')" style="cursor:pointer;">Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;">Terms of Service</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: PACKAGES ═══════════════════════ -->
+  <div class="page" id="page-packages">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Our Packages</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Choose the package that<br /><em>fits your vision.</em></h1>
+        <p>Every package is a complete, end-to-end clinic setup. Pick the one that matches your specialty.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="packages-grid">
+          <div class="package-card" id="pkg-essential">
+            <div class="package-name">Essential Package</div>
+            <div class="package-tagline">Core consumables for a laser &amp; microneedling-ready practice.</div>
+            <div class="package-price">₹20,000 – ₹50,000 initial stock</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+              <li class="consumable-group">Diode Laser</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Disposable razors</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Ultrasound gel / laser gel</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Cooling gel</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Protective eyewear cleaning wipes</li>
+              <li class="consumable-group">CO₂ Fractional Laser</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Topical anesthetic cream</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Saline, gauze &amp; cotton rolls</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Post-laser repair cream</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Sunscreen sachets</li>
+              <li class="consumable-group">Microneedling</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Disposable derma cartridges (12, 24, 36 pin)</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Sterile gloves &amp; Chlorhexidine solution</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>PRP tubes (if offering PRP)</li>
+              <li class="consumable-group">General &amp; Sterilization</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Syringes (2, 5, 10 ml), needles, masks</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Disposable drapes &amp; sharps containers</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Autoclave pouches &amp; sterilization indicators</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Instrument disinfectant</li>
+            </ul>
+            <div class="package-cta"><a href="#" class="btn-secondary" style="display:block;text-align:center;">Get Exact Quote</a><p style="font-size:12px;color:var(--color-stone);text-align:center;margin-top:8px;">Free discovery call included</p></div>
+          </div>
+          <div class="package-card featured" id="pkg-professional">
+            <div class="package-badge">Most Popular</div>
+            <div class="package-name">Professional Package</div>
+            <div class="package-tagline">Everything in Essential, plus chemical peel, PRP, and injectable procedure stock.</div>
+            <div class="package-price">₹50,000 – ₹1.2 Lakh initial stock</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Everything in Essential Package</li>
+              <li class="consumable-group">Q-Switch Nd:YAG Laser</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Carbon peel &amp; activated carbon solution</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Laser post-care kits</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Protective eye shields</li>
+              <li class="consumable-group">Chemical Peels</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Glycolic, Salicylic, Mandelic &amp; TCA peels</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Neutralizer solutions &amp; fan brushes</li>
+              <li class="consumable-group">Microneedling &amp; PRP</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>PRP &amp; ACD anticoagulant tubes</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Mesotherapy &amp; Luer-lock syringes</li>
+              <li class="consumable-group">Injectable Procedures</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Insulin syringes, ice packs, marking pencils</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Disposable facial rulers</li>
+              <li class="consumable-group">Clinical Consumables</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Examination &amp; procedure gloves</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Surgical gowns, face masks, head caps</li>
+            </ul>
+            <div class="package-cta"><a href="#" class="btn-primary" style="display:block;text-align:center;">Get Exact Quote</a><p style="font-size:12px;color:var(--color-stone);text-align:center;margin-top:8px;">Free discovery call included</p></div>
+          </div>
+          <div class="package-card" id="pkg-premium">
+            <div class="package-name">Premium Package</div>
+            <div class="package-tagline">Full-spectrum stock for an advanced aesthetic &amp; injectables practice.</div>
+            <div class="package-price">₹1.5 – ₹3 Lakh initial stock</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Everything in Professional Package</li>
+              <li class="consumable-group">HydraFacial</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>HydraFacial tips &amp; hydro peel solutions</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>GlySal &amp; Antiox solutions</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Booster serums &amp; extraction tips</li>
+              <li class="consumable-group">Advanced Microneedling</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>RF microneedling cartridges</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Gold-coated needle tips &amp; conductive gel</li>
+              <li class="consumable-group">Aesthetic &amp; Injectables</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Hyaluronic acid fillers &amp; botulinum toxin vials</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Cannulas, fine-gauge needles, lidocaine cream</li>
+              <li class="consumable-group">Skin Boosters &amp; Mesotherapy</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>HA skin boosters &amp; mesotherapy cocktails</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Exosomes &amp; polynucleotide products</li>
+              <li class="consumable-group">Advanced Post-Procedure Kits</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Growth factor &amp; barrier repair creams</li>
+              <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Medical-grade sunscreens &amp; cooling masks</li>
+            </ul>
+            <div class="package-cta"><a href="#" class="btn-secondary" style="display:block;text-align:center;">Get Exact Quote</a><p style="font-size:12px;color:var(--color-stone);text-align:center;margin-top:8px;">Free discovery call included</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Let's figure it out<br /><em>together.</em></h2>
+        <p>Book a free 30-minute call. We'll recommend the right package for your goals, location, and budget.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn-secondary" onclick="showPage('services'); return false;">Explore Services</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: SHOP ═══════════════════════ -->
+  <div class="page" id="page-shop">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Dermasetup Shop</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Clinic essentials,<br /><em>ready to order.</em></h1>
+        <p>Vetted consumables, equipment, and branded materials — sourced from our verified vendor network and delivered to your clinic.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Coming Soon</span>
+          <span class="eyebrow-accent"></span>
+          <h2>We're building something <em>worth waiting for.</em></h2>
+        </div>
+        <p style="font-size:18px;font-weight:300;color:var(--color-stone);line-height:1.8;max-width:600px;margin:0 auto 48px;text-align:center;">The Dermasetup Shop will carry everything your clinic needs post-setup — from disposables and consumables to branded stationery and patient kits. Notify me when it launches.</p>
+        <div style="display:flex;justify-content:center;">
+          <a href="#" class="btn-primary">Notify Me at Launch</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: HOW IT WORKS ═══════════════════════ -->
+  <div class="page" id="page-how">
+    <div class="page-hero page-hero-dark">
+      <div class="container">
+        <span class="eyebrow">The Process</span>
+        <span class="eyebrow-accent"></span>
+        <h1>From call to clinic<br />in <em>90 days.</em></h1>
+        <p>A clear, phased process designed around the realities of setting up a medical practice in India.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Phase by Phase</span>
+          <span class="eyebrow-accent"></span>
+          <h2>What happens — and when</h2>
+          <p>All six services run in parallel, tracked on a shared dashboard.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">01</div>
+            <div class="timeline-content">
+              <div class="timeline-week">Week 1</div>
+              <h3>Discovery & Scope</h3>
+              <p>Free 30-minute call, then a deeper discovery session. Tailored setup brief delivered, dedicated consultant assigned.</p>
+              <div class="timeline-tags"><span class="timeline-tag">Discovery call</span><span class="timeline-tag">Budget mapping</span><span class="timeline-tag">Consultant assigned</span></div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">02</div>
+            <div class="timeline-content">
+              <div class="timeline-week">Weeks 2–4</div>
+              <h3>Design & Approvals</h3>
+              <p>Interior concepts, equipment specifications, licensing applications — all three workstreams run simultaneously.</p>
+              <div class="timeline-tags"><span class="timeline-tag">Floor plan & 3D concept</span><span class="timeline-tag">License filings</span><span class="timeline-tag">Brand identity drafts</span></div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">03</div>
+            <div class="timeline-content">
+              <div class="timeline-week">Weeks 5–10</div>
+              <h3>Build & Procure</h3>
+              <p>Contractors begin fit-out. Equipment orders placed. Staff hiring and website build run in parallel.</p>
+              <div class="timeline-tags"><span class="timeline-tag">Fit-out construction</span><span class="timeline-tag">Equipment delivery</span><span class="timeline-tag">Staff interviews</span><span class="timeline-tag">Website build</span></div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">04</div>
+            <div class="timeline-content">
+              <div class="timeline-week">Weeks 11–12</div>
+              <h3>Handover & Soft Launch</h3>
+              <p>Equipment installed and calibrated. Staff onboarded. Licenses received. Opening day checklist completed.</p>
+              <div class="timeline-tags"><span class="timeline-tag">Equipment installation</span><span class="timeline-tag">Staff onboarding</span><span class="timeline-tag">Opening day checklist</span></div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">05</div>
+            <div class="timeline-content">
+              <div class="timeline-week">Days 90 — Post-Launch</div>
+              <h3>90-Day Growth Support</h3>
+              <p>Check-ins at 30, 60, and 90 days. Vendor issues resolved. Referral network introduced.</p>
+              <div class="timeline-tags"><span class="timeline-tag">30-day check-in</span><span class="timeline-tag">60-day review</span><span class="timeline-tag">Growth advisory</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner" style="background:var(--color-dune);">
+      <div class="container">
+        <h2 style="color:#fff;">Start with a free call.</h2>
+        <p style="color:rgba(255,255,255,0.85);">30 minutes. No obligation. You'll leave knowing exactly what your setup involves.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary" style="background:var(--color-slate);" onclick="showPage('start'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn-secondary" style="border-color:rgba(255,255,255,0.6);color:#fff;" onclick="showPage('packages'); return false;">View Packages</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: ABOUT ═══════════════════════ -->
+  <div class="page" id="page-about">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">About Dermasetup</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Built by people who understand <em>medicine.</em></h1>
+        <p>Dermasetup was founded because setting up a dermatology practice in India was unnecessarily hard. Too many vendors, too many approvals, too little coordination.</p>
+      </div>
+    </div>
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="eyebrow">From the Founders</span>
+          <span class="eyebrow-accent"></span>
+          <h2>The people behind <em>Dermasetup</em></h2>
+        </div>
+        <div class="founders-grid">
+          <div class="founder-card">
+            <image-slot id="founder-photo-1" class="founder-photo" shape="rounded" radius="6" placeholder="Drop founder photo"></image-slot>
+            <div class="founder-body">
+              <blockquote class="founder-text">Opening a dermatology practice should be the exciting start of something new, not a bureaucratic battle in itself. We created Dermasetup to lift the burden of vendors, permits, and contractors off the shoulders of dermatologists, so they can focus on what truly matters: their patients.</blockquote>
+              <div class="founder-meta">
+                <span class="founder-name">Samyak Kumar</span>
+                <span class="founder-role">Co-Founder &amp; CEO</span>
+              </div>
+            </div>
+          </div>
+          <div class="founder-card">
+            <image-slot id="founder-photo-2" class="founder-photo" shape="rounded" radius="6" placeholder="Drop founder photo"></image-slot>
+            <div class="founder-body">
+              <blockquote class="founder-text">The average dermatologist loses 6 to 18 months just trying to get their doors open. Dermasetup exists to give that invaluable time back to the healers, turning a complex, painful setup into a seamless system that just works.</blockquote>
+              <div class="founder-meta">
+                <span class="founder-name">Naman Aggarwal</span>
+                <span class="founder-role">Co-Founder &amp; COO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">How We Work</span>
+          <span class="eyebrow-accent"></span>
+          <h2>Three principles we never compromise on</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            <h4>Compliance first</h4>
+            <p>We never take shortcuts on licensing. A clinic that opens legally and safely is one that stays open.</p>
+          </div>
+          <div class="value-card">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+            <h4>One consultant, full accountability</h4>
+            <p>You always have a single point of contact. They own the project end to end.</p>
+          </div>
+          <div class="value-card">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <h4>On time or we fix it</h4>
+            <p>97% of our clinics deliver on schedule. When something slips, we absorb the cost of correction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Let's build your<br /><em>practice together.</em></h2>
+        <p>Book a free 30-minute consultation. We'll understand your vision and tell you exactly how we'd approach your setup.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn-secondary" onclick="showPage('how'); return false;">See How It Works</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: SERVICES ═══════════════════════ -->
+  <div class="page" id="page-services">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Our Services</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Everything your practice needs,<br /><em>in one place.</em></h1>
+        <p>Five end-to-end services, coordinated by a single dedicated consultant — so nothing slips through the cracks.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="services-grid balanced">
+          <div class="service-card">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+            <h3>Space & Interior Design</h3>
+            <p>Clinic layouts built for patient flow, hygiene standards, and your aesthetic.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .3 2.7-1.1 2.7H3.9c-1.4 0-2.1-1.7-1.1-2.7L4.2 15.3"/></svg>
+            <h3>Equipment Procurement</h3>
+            <p>Laser systems, cryotherapy, consumables — sourced from verified vendors at negotiated rates.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+            <h3>Branding & Identity</h3>
+            <p>Logo, brand guidelines, stationery, and signage — built to communicate trust from day one.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            <h3>Digital Presence</h3>
+            <p>Clinic website, Google Business, and patient booking — so patients find you before you open.</p>
+          </div>
+          <div class="service-card">
+            <svg class="service-card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            <h3>Launch & Growth Support</h3>
+            <p>Opening-day strategy, referral network building, and 90-day post-launch check-ins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Ready to get <em>started?</em></h2>
+        <p>Book a free consultation. We'll map your exact requirements and tell you which package fits best.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary" onclick="showPage('start'); return false;">Book Free Consultation</a>
+          <a href="#" class="btn-secondary" onclick="showPage('packages'); return false;">View Packages</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: GET STARTED ═══════════════════════ -->
+  <div class="page" id="page-start">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Get Started</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Let's build your<br /><em>practice together.</em></h1>
+        <p>Tell us a little about your vision. We'll follow up within one business day to schedule your free 30-minute consultation — no obligation, no pressure.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="start-grid">
+          <div>
+            <span class="eyebrow">What happens next</span>
+            <span class="eyebrow-accent"></span>
+            <ol class="start-steps">
+              <li class="start-step">
+                <span class="start-step-num">01</span>
+                <div>
+                  <h4>We review your goals</h4>
+                  <p>Share your specialty, location, and timeline. We study your requirements before we ever get on a call.</p>
+                </div>
+              </li>
+              <li class="start-step">
+                <span class="start-step-num">02</span>
+                <div>
+                  <h4>A free 30-minute consultation</h4>
+                  <p>We walk you through exactly how we'd approach your setup and which package fits your goals and budget.</p>
+                </div>
+              </li>
+              <li class="start-step">
+                <span class="start-step-num">03</span>
+                <div>
+                  <h4>A clear, costed roadmap</h4>
+                  <p>You leave with a transparent plan and timeline — from licensing to opening day — with zero guesswork.</p>
+                </div>
+              </li>
+            </ol>
+            <div class="start-reassure">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              No cost, no commitment — just clarity on your path forward.
+            </div>
+          </div>
+          <div class="booking-card">
+            <form id="booking-form" class="booking-form">
+              <h3>Request your free consultation</h3>
+              <p class="sub">Fields marked with an asterisk are required.</p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="bf-name">Full Name *</label>
+                  <input type="text" id="bf-name" name="name" placeholder="Dr. Priya Mehta" required />
+                </div>
+                <div class="field">
+                  <label for="bf-phone">Phone *</label>
+                  <input type="tel" id="bf-phone" name="phone" placeholder="+91 90011 94777" required />
+                </div>
+              </div>
+              <div class="field">
+                <label for="bf-email">Email *</label>
+                <input type="email" id="bf-email" name="email" placeholder="you@clinic.com" required />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="bf-city">City *</label>
+                  <input type="text" id="bf-city" name="city" placeholder="New Delhi" required />
+                </div>
+                <div class="field">
+                  <label for="bf-type">Practice Type</label>
+                  <select id="bf-type" name="type">
+                    <option value="">Select one</option>
+                    <option>New clinic — Dermatology</option>
+                    <option>New clinic — Dermatology &amp; Hair</option>
+                    <option>Aesthetic / Cosmetic clinic</option>
+                    <option>Expanding an existing practice</option>
+                    <option>Still exploring</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bf-msg">Tell us about your vision</label>
+                <textarea id="bf-msg" name="message" placeholder="Where are you in the process? What would you like help with?"></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Request Consultation</button>
+              <p class="booking-note">We'll respond within one business day.</p>
+            </form>
+            <div class="booking-success" id="booking-success">
+              <div class="check">
+                <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              </div>
+              <h3>Thank you — we've got it.</h3>
+              <p>Your request is in. A member of our team will reach out within one business day to schedule your consultation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: PRIVACY POLICY ═══════════════════════ -->
+  <div class="page" id="page-privacy">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Privacy <em>Policy</em></h1>
+        <p>How Dermasetup collects, uses, and protects the information you share with us.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div style="max-width:760px;">
+          <p style="font-size:14px;color:var(--color-stone);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:48px;">Last updated: 21 June 2026</p>
+
+          <div style="font-size:17px;font-weight:300;color:var(--color-stone);line-height:1.8;">
+            <p style="margin-bottom:40px;">Dermasetup ("we", "us", or "our") is committed to protecting the privacy of the dermatologists, healthcare professionals, and visitors who use our practice-setup platform and website. This policy explains what information we collect, why we collect it, and the choices you have.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">1. Information We Collect</h2>
+            <p style="margin-bottom:16px;">We collect information you provide directly to us, including:</p>
+            <ul style="list-style:none;margin:0 0 40px;padding:0;">
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Contact details such as your name, email address, and phone number when you book a consultation or enquire about our services.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Professional information including your specialty, qualifications, and details about the clinic you intend to set up.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Technical data such as your IP address, browser type, and pages visited, collected automatically through cookies and similar technologies.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">2. How We Use Your Information</h2>
+            <p style="margin-bottom:16px;">We use the information we collect to:</p>
+            <ul style="list-style:none;margin:0 0 40px;padding:0;">
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Provide, operate, and improve our practice-setup services.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Respond to your enquiries, schedule consultations, and deliver the services you request.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Send you relevant updates, service information, and — where you have consented — marketing communications.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Comply with legal obligations and protect against fraud or misuse.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">3. Sharing Your Information</h2>
+            <p style="margin-bottom:40px;">We do not sell your personal information. We may share it with trusted vendors and partners in our verified network who help us deliver services to you — such as equipment suppliers, licensing consultants, and branding partners — and only to the extent necessary to fulfil your project. We may also disclose information where required by law.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">4. Data Security</h2>
+            <p style="margin-bottom:40px;">We implement appropriate technical and organisational measures to safeguard your information against unauthorised access, alteration, disclosure, or destruction. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">5. Your Rights</h2>
+            <p style="margin-bottom:40px;">You have the right to access, correct, or request deletion of the personal information we hold about you. You may also opt out of marketing communications at any time. To exercise any of these rights, please contact us using the details below.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">6. Cookies</h2>
+            <p style="margin-bottom:40px;">Our website uses cookies to improve your browsing experience and analyse site traffic. You can control or disable cookies through your browser settings, though some features of the site may not function properly as a result.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">7. Changes to This Policy</h2>
+            <p style="margin-bottom:40px;">We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised "Last updated" date. We encourage you to review it periodically.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">8. Contact Us</h2>
+            <p style="margin-bottom:24px;">If you have any questions about this Privacy Policy or how we handle your information, please reach out:</p>
+            <div style="background:var(--color-parchment);border:1px solid var(--color-blush);border-radius:6px;padding:32px;font-size:15px;color:var(--color-slate);line-height:1.8;">
+              <strong style="font-weight:600;">Dermasetup</strong><br />
+              B2 Extn. / 10, Basement, Safdarjung Enclave,<br />
+              Near B2 Arya Samaj Mandir, Sara Mathew Road,<br />
+              New Delhi 110029<br />
+              <span style="display:inline-block;margin-top:12px;">Email: info@oralhealthcart.com</span><br />
+              Phone: +91 90011 94777 · +91 97018 29555
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: TERMS OF SERVICE ═══════════════════════ -->
+  <div class="page" id="page-terms">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Terms of <em>Service</em></h1>
+        <p>The terms that govern your use of the Dermasetup platform and services.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div style="max-width:760px;">
+          <p style="font-size:14px;color:var(--color-stone);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:48px;">Last updated: 21 June 2026</p>
+
+          <div style="font-size:17px;font-weight:300;color:var(--color-stone);line-height:1.8;">
+            <p style="margin-bottom:40px;">These Terms of Service ("Terms") govern your access to and use of the Dermasetup website and our practice-setup services. By using our website or engaging our services, you agree to be bound by these Terms. Please read them carefully.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">1. Acceptance of Terms</h2>
+            <p style="margin-bottom:40px;">By accessing our website, booking a consultation, or engaging Dermasetup for any service, you confirm that you are at least 18 years of age and have the authority to enter into these Terms on behalf of yourself or the entity you represent.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">2. Our Services</h2>
+            <p style="margin-bottom:16px;">Dermasetup provides practice-setup services for dermatologists and healthcare professionals, which may include:</p>
+            <ul style="list-style:none;margin:0 0 40px;padding:0;">
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Licensing, regulatory, and compliance assistance.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Clinic design, equipment sourcing, and procurement coordination.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Branding, marketing, and digital-presence setup.</li>
+            </ul>
+            <p style="margin-bottom:40px;">The specific scope, deliverables, and timelines for your engagement will be set out in a separate proposal or service agreement.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">3. Fees and Payment</h2>
+            <p style="margin-bottom:40px;">Fees for our services are as quoted in your proposal or service agreement. Unless otherwise stated, payments are due according to the schedule agreed at the time of engagement. Late or non-payment may result in suspension of services. All fees are exclusive of applicable taxes unless specified.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">4. Client Responsibilities</h2>
+            <p style="margin-bottom:40px;">You agree to provide accurate, complete, and timely information and documentation reasonably required for us to deliver the services. Delays caused by incomplete information, regulatory authorities, or third-party vendors are outside our control, and timelines may be adjusted accordingly.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">5. Third-Party Vendors</h2>
+            <p style="margin-bottom:40px;">We coordinate with vendors and partners in our verified network on your behalf. While we select partners carefully, Dermasetup is not responsible for the independent acts, products, or services of third parties. Any warranties on equipment or third-party deliverables are provided by the respective vendor.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">6. Intellectual Property</h2>
+            <p style="margin-bottom:40px;">All content on this website, including text, graphics, logos, and branding materials we create, remains the property of Dermasetup or its licensors unless expressly transferred to you under a service agreement. You may not reproduce or reuse our materials without prior written consent.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">7. Limitation of Liability</h2>
+            <p style="margin-bottom:40px;">To the maximum extent permitted by law, Dermasetup shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services. Our total liability for any claim shall not exceed the fees paid by you for the specific service giving rise to the claim.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">8. Termination</h2>
+            <p style="margin-bottom:40px;">Either party may terminate an engagement in accordance with the terms of the applicable service agreement. Fees for work completed up to the date of termination remain payable. We reserve the right to suspend or terminate access to our website at our discretion.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">9. Governing Law</h2>
+            <p style="margin-bottom:40px;">These Terms are governed by and construed in accordance with the laws of India. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of New Delhi.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">10. Contact Us</h2>
+            <p style="margin-bottom:24px;">If you have any questions about these Terms, please reach out:</p>
+            <div style="background:var(--color-parchment);border:1px solid var(--color-blush);border-radius:6px;padding:32px;font-size:15px;color:var(--color-slate);line-height:1.8;">
+              <strong style="font-weight:600;">Dermasetup</strong><br />
+              B2 Extn. / 10, Basement, Safdarjung Enclave,<br />
+              Near B2 Arya Samaj Mandir, Sara Mathew Road,<br />
+              New Delhi 110029<br />
+              <span style="display:inline-block;margin-top:12px;">Email: info@oralhealthcart.com</span><br />
+              Phone: +91 90011 94777 · +91 97018 29555
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════ PAGE: REFUND POLICY ═══════════════════════ -->
+  <div class="page" id="page-refund">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <span class="eyebrow-accent"></span>
+        <h1>Refund <em>Policy</em></h1>
+        <p>How refunds, cancellations, and payments are handled across Dermasetup engagements.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div style="max-width:760px;">
+          <p style="font-size:14px;color:var(--color-stone);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:48px;">Last updated: 21 June 2026</p>
+
+          <div style="font-size:17px;font-weight:300;color:var(--color-stone);line-height:1.8;">
+            <p style="margin-bottom:40px;">This Refund Policy explains the circumstances under which refunds may be issued for the practice-setup services provided by Dermasetup ("we", "us", or "our"). By engaging our services, you agree to the terms set out below. This policy should be read alongside our Terms of Service and your individual service agreement.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">1. Consultation Fees</h2>
+            <p style="margin-bottom:40px;">Initial consultations marked as complimentary are free of charge. Where a paid consultation or assessment fee applies, it covers the time and expertise involved and is non-refundable once the consultation has taken place.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">2. Service Deposits and Milestones</h2>
+            <p style="margin-bottom:16px;">Most engagements are billed against agreed milestones. Refund eligibility depends on the stage of work completed:</p>
+            <ul style="list-style:none;margin:0 0 40px;padding:0;">
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Booking deposits secure your project slot and the allocation of our team, and are non-refundable once work has commenced.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>Fees for milestones that have been completed and delivered are non-refundable.</li>
+              <li style="position:relative;padding-left:24px;margin-bottom:12px;"><span style="position:absolute;left:0;top:0;color:var(--color-dune);">—</span>For milestones that are in progress at the time of cancellation, refunds will be assessed on a pro-rata basis for work not yet performed.</li>
+            </ul>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">3. Third-Party Costs</h2>
+            <p style="margin-bottom:40px;">Amounts paid to third parties on your behalf — including government fees, licensing charges, equipment deposits, and vendor payments — are governed by the policies of those third parties and are generally non-refundable once committed. We will pass on any recoverable amounts where possible.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">4. Cancellation by You</h2>
+            <p style="margin-bottom:40px;">You may cancel your engagement at any time by providing written notice. Upon cancellation, you remain liable for all work completed and costs committed up to the cancellation date. Any eligible refund will be calculated after deducting these amounts.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">5. Cancellation by Us</h2>
+            <p style="margin-bottom:40px;">In the rare event that we are unable to deliver a contracted service, we will notify you promptly and refund any fees paid for work not yet performed. Our liability in such cases is limited as set out in our Terms of Service.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">6. How to Request a Refund</h2>
+            <p style="margin-bottom:40px;">To request a refund, please contact us in writing using the details below, including your name, project reference, and the reason for your request. We aim to acknowledge all requests within 7 business days and to process approved refunds within 14 business days to the original payment method.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">7. Changes to This Policy</h2>
+            <p style="margin-bottom:40px;">We may update this Refund Policy from time to time. Any changes will be posted on this page with a revised "Last updated" date and will apply to engagements entered into after that date.</p>
+
+            <h2 style="font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--color-slate);line-height:1.3;margin:0 0 16px;">8. Contact Us</h2>
+            <p style="margin-bottom:24px;">For any questions about this Refund Policy or to submit a request, please reach out:</p>
+            <div style="background:var(--color-parchment);border:1px solid var(--color-blush);border-radius:6px;padding:32px;font-size:15px;color:var(--color-slate);line-height:1.8;">
+              <strong style="font-weight:600;">Dermasetup</strong><br />
+              B2 Extn. / 10, Basement, Safdarjung Enclave,<br />
+              Near B2 Arya Samaj Mandir, Sara Mathew Road,<br />
+              New Delhi 110029<br />
+              <span style="display:inline-block;margin-top:12px;">Email: info@oralhealthcart.com</span><br />
+              Phone: +91 90011 94777 · +91 97018 29555
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="image-slot.js"></script>
+  <script>
+    // Shared footer HTML — injected into every page
+    const FOOTER_HTML = `
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <span class="footer-logo" onclick="showPage('home')"><img src="assets/logo-dermasetup.png" alt="DermaSetup — End to End Dermatology Clinic Solutions" /></span>
+            <p class="footer-tagline">End to end dermatology clinic solutions.</p>
+            <div class="footer-contact" style="align-items:flex-start;"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg><span>B2 Extn. / 10, Basement, Safdarjung Enclave,<br />Near B2 Arya Samaj Mandir, Sara Mathew Road,<br />New Delhi 110029</span></div>
+            <div class="footer-contact"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>+91 90011 94777</div>
+            <div class="footer-contact"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>+91 97018 29555</div>
+          </div>
+          <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('how')">Our Process</a></li><li><a onclick="showPage('services')">Services</a></li></ul></div>
+          <div class="footer-col"><h5>Packages</h5><ul class="footer-links"><li><a onclick="showPage('packages','pkg-essential')">Essential</a></li><li><a onclick="showPage('packages','pkg-professional')">Professional</a></li><li><a onclick="showPage('packages','pkg-premium')">Premium</a></li></ul></div>
+          <div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('terms')">Terms of Service</a></li><li><a onclick="showPage('refund')">Refund Policy</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Dermasetup. All rights reserved.</p>
+          <div class="footer-policy"><a onclick="showPage('privacy')" style="cursor:pointer;">Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;">Terms of Service</a></div>
+        </div>
+      </div>
+    </footer>`;
+
+    // Testimonial carousel
+    (function() {
+      const track = document.getElementById('testi-track');
+      const dotsWrap = document.getElementById('testi-dots');
+      if (!track) return;
+      const cards = track.querySelectorAll('.testi-card');
+      const total = cards.length;
+      let current = 0;
+      let timer;
+
+      // Build dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next() { goTo(current + 1); }
+
+      function startTimer() { timer = setInterval(next, 4500); }
+      function stopTimer() { clearInterval(timer); }
+
+      track.closest('.testi-carousel-wrap').addEventListener('mouseenter', stopTimer);
+      track.closest('.testi-carousel-wrap').addEventListener('mouseleave', startTimer);
+
+      startTimer();
+    })();
+
+    // Inject footer into all pages that don't already have one
+    document.querySelectorAll('.page').forEach(page => {
+      if (!page.querySelector('footer')) {
+        page.insertAdjacentHTML('beforeend', FOOTER_HTML);
+      }
+    });
+
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Booking form submit → success state
+    (function() {
+      const form = document.getElementById('booking-form');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        document.getElementById('booking-success').classList.add('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navbar-menu');
+      const toggle = document.getElementById('navbar-toggle');
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMenu() {
+      document.getElementById('navbar-menu').classList.remove('open');
+      const toggle = document.getElementById('navbar-toggle');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    // Page router
+    function showPage(id, anchor) {
+      closeMenu();
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+      document.querySelectorAll('.navbar-links a').forEach(a => a.classList.remove('active'));
+      const navEl = document.getElementById('nav-' + id);
+      if (navEl) navEl.classList.add('active');
+      if (anchor) {
+        const el = document.getElementById(anchor);
+        if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

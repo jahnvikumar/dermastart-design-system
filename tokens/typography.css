@@ -1,0 +1,41 @@
+/* DermaStart — Typography Tokens
+ * Display: Cormorant Garamond (Google Fonts)
+ * Body/UI: DM Sans (Google Fonts)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Font Families ── */
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* ── Type Scale ── */
+  --text-hero:     clamp(44px, 6vw, 72px);   /* Main hero — Cormorant w300 */
+  --text-h1:       clamp(32px, 4vw, 44px);   /* Page titles — Cormorant w500 */
+  --text-h2:       clamp(24px, 3vw, 32px);   /* Section headings — Cormorant w500 */
+  --text-h3:       22px;                      /* Card/sub titles — DM Sans w600 */
+  --text-body-lg:  18px;                      /* Intro paragraphs — DM Sans w300 */
+  --text-body:     16px;                      /* General body — DM Sans w400 */
+  --text-sm:       14px;                      /* Captions, meta — DM Sans w400 */
+  --text-xs:       12px;                      /* Labels, tags, badges — DM Sans w500 */
+  --text-btn:      14px;                      /* Button text — DM Sans w600 */
+
+  /* ── Line Heights ── */
+  --lh-hero:    1.10;  /* @kind other */
+  --lh-h1:      1.15;  /* @kind other */
+  --lh-h2:      1.20;  /* @kind other */
+  --lh-h3:      1.30;  /* @kind other */
+  --lh-body-lg: 1.70;  /* @kind other */
+  --lh-body:    1.65;  /* @kind other */
+  --lh-sm:      1.50;  /* @kind other */
+  --lh-xs:      1.40;  /* @kind other */
+  --lh-btn:     1.00;  /* @kind other */
+
+  /* ── Letter Spacing ── */
+  --ls-display:  0.02em; /* @kind other */
+  --ls-body:    -0.01em; /* @kind other */
+  --ls-eyebrow:  0.12em; /* @kind other */
+  --ls-btn:      0.06em; /* @kind other */
+  --ls-badge:    0.10em; /* @kind other */
+  --ls-caption:  0.02em; /* @kind other */
+}

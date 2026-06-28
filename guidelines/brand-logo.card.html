@@ -1,0 +1,37 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Logo & Wordmark" subtitle="DermaSetup primary logo — leaf monogram + wordmark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 24px 28px; font-family: var(--font-body); display: flex; gap: 40px; align-items: center; }
+  .logo-block { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .logo-block img { display: block; width: auto; }
+  .divider { width: 1px; height: 100px; background: var(--color-blush); }
+  .on-dark { background: var(--color-slate); padding: 18px 26px; border-radius: var(--radius-lg); }
+  .rules { flex: 1; }
+  .rule { font-size: 12px; color: var(--color-stone); margin-bottom: 6px; display: flex; gap: 8px; align-items: flex-start; }
+  .rule::before { content: '—'; color: var(--color-dune); flex-shrink: 0; }
+</style>
+</head>
+<body>
+  <div class="logo-block">
+    <img src="../../assets/logo-dermasetup.png" alt="DermaSetup" style="height:56px;" />
+    <img src="../../assets/logo-dermasetup.png" alt="DermaSetup" style="height:34px;" />
+  </div>
+  <div class="divider"></div>
+  <div class="on-dark">
+    <img src="../../assets/logo-dermasetup.png" alt="DermaSetup" style="height:44px;" />
+  </div>
+  <div class="divider"></div>
+  <div class="rules">
+    <div class="rule">Primary logo: leaf monogram + DermaSetup wordmark</div>
+    <div class="rule">Clear space: keep at least the monogram width on all sides</div>
+    <div class="rule">Minimum height: 28px to keep the monogram legible</div>
+    <div class="rule">Don't recolor, stretch, or add effects to the logo</div>
+  </div>
+</body>
+</html>

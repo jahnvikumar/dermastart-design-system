@@ -1,0 +1,32 @@
+/* DermaStart — Spacing & Layout Tokens
+ * 8px base grid throughout.
+ */
+
+:root {
+  /* ── Spacing Scale ── */
+  --space-1:   8px;    /* Tight gaps, icon padding */
+  --space-2:  16px;    /* Inline element gaps */
+  --space-3:  24px;    /* Component internal padding */
+  --space-4:  32px;    /* Card padding, small sections */
+  --space-5:  48px;    /* Between components in a section */
+  --space-6:  64px;    /* Section padding (mobile) */
+  --space-7:  96px;    /* Section padding (desktop) */
+  --space-8: 128px;    /* Hero vertical padding */
+
+  /* ── Max Widths ── */
+  --max-width:        1200px;  /* Main content */
+  --max-width-narrow:  720px;  /* Text-heavy blocks */
+  --max-width-form:    560px;  /* Form containers */
+
+  /* ── Grid ── */
+  --gutter:     24px;   /* Desktop column gutter */
+  --gutter-md:  20px;   /* Tablet gutter */
+  --gutter-sm:  16px;   /* Mobile gutter */
+
+  /* ── Breakpoints (use in @media) ── */
+  --bp-sm:   480px;
+  --bp-md:   768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-2xl: 1536px;
+}

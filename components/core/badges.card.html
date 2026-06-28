@@ -1,0 +1,51 @@
+<!-- @dsCard group="Components" viewport="700x130" name="Badges & Tags" subtitle="Default · Trust · Featured · Error · Success" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { background: var(--color-canvas); padding: 28px; font-family: var(--font-body); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-stone); min-width: 72px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const { Badge } = window.DermaStartDesignSystem_1e5d5c;
+  const { createElement: h, Fragment } = React;
+
+  const App = () => h(Fragment, null,
+    h('div', { className: 'row' },
+      h('span', { className: 'lbl' }, 'Default'),
+      h(Badge, null, 'Aesthetic & Cosmetic'),
+      h(Badge, null, 'Hair Clinic'),
+      h(Badge, null, 'Laser Procedures'),
+    ),
+    h('div', { className: 'row' },
+      h('span', { className: 'lbl' }, 'Trust'),
+      h(Badge, { variant: 'trust' }, 'MCI-verified'),
+      h(Badge, { variant: 'trust' }, 'Verified vendor'),
+      h(Badge, { variant: 'trust' }, 'Dedicated consultant'),
+    ),
+    h('div', { className: 'row' },
+      h('span', { className: 'lbl' }, 'Featured'),
+      h(Badge, { variant: 'featured' }, 'Most Popular'),
+    ),
+    h('div', { className: 'row' },
+      h('span', { className: 'lbl' }, 'Status'),
+      h(Badge, { variant: 'error' }, 'Invalid email'),
+      h(Badge, { variant: 'success' }, 'Booking confirmed'),
+    ),
+  );
+
+  ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>

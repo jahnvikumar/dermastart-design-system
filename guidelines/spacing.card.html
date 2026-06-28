@@ -1,0 +1,32 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Spacing Scale" subtitle="8px base grid — space-1 through space-8" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 20px; font-family: var(--font-body); }
+  .rows { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: flex; align-items: center; gap: 12px; }
+  .token { font-size: 11px; font-family: monospace; color: var(--color-stone); min-width: 80px; }
+  .val { font-size: 11px; color: var(--color-stone); min-width: 36px; }
+  .bar-wrap { flex: 1; height: 16px; display: flex; align-items: center; }
+  .bar { height: 10px; background: var(--color-dune); border-radius: 1px; opacity: 0.75; }
+  .desc { font-size: 10px; color: var(--color-stone); min-width: 160px; text-align: right; }
+</style>
+</head>
+<body>
+<div class="rows">
+  <div class="row"><span class="token">--space-1</span><span class="val">8px</span><div class="bar-wrap"><div class="bar" style="width:8px;"></div></div><span class="desc">Tight gaps, icon padding</span></div>
+  <div class="row"><span class="token">--space-2</span><span class="val">16px</span><div class="bar-wrap"><div class="bar" style="width:16px;"></div></div><span class="desc">Inline element gaps</span></div>
+  <div class="row"><span class="token">--space-3</span><span class="val">24px</span><div class="bar-wrap"><div class="bar" style="width:24px;"></div></div><span class="desc">Component padding</span></div>
+  <div class="row"><span class="token">--space-4</span><span class="val">32px</span><div class="bar-wrap"><div class="bar" style="width:32px;"></div></div><span class="desc">Card padding</span></div>
+  <div class="row"><span class="token">--space-5</span><span class="val">48px</span><div class="bar-wrap"><div class="bar" style="width:48px;"></div></div><span class="desc">Between components</span></div>
+  <div class="row"><span class="token">--space-6</span><span class="val">64px</span><div class="bar-wrap"><div class="bar" style="width:64px;"></div></div><span class="desc">Section padding (mobile)</span></div>
+  <div class="row"><span class="token">--space-7</span><span class="val">96px</span><div class="bar-wrap"><div class="bar" style="width:96px;"></div></div><span class="desc">Section padding (desktop)</span></div>
+  <div class="row"><span class="token">--space-8</span><span class="val">128px</span><div class="bar-wrap"><div class="bar" style="width:128px;"></div></div><span class="desc">Hero vertical padding</span></div>
+</div>
+</body>
+</html>

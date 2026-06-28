@@ -1,0 +1,31 @@
+<!-- @dsCard group="Type" viewport="700x280" name="Type Scale" subtitle="Full scale with tokens and usage notes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-white); padding: 16px 20px; font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: 100px 60px 80px 1fr; gap: 8px; align-items: center; border-bottom: 1px solid var(--color-blush); padding: 8px 0; }
+  .row:first-child { border-bottom: 1px solid var(--color-blush); padding-bottom: 6px; }
+  .col-header { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-stone); }
+  .token { font-size: 10px; font-family: monospace; color: var(--color-stone); }
+  .size { font-size: 10px; color: var(--color-stone); }
+  .usage { font-size: 10px; color: var(--color-stone); }
+</style>
+</head>
+<body>
+  <div class="row"><span class="col-header">Token</span><span class="col-header">Size</span><span class="col-header">Font</span><span class="col-header">Usage</span></div>
+  <div class="row"><span class="token">--text-hero</span><span class="size">44–72px</span><span style="font-family:var(--font-display);font-size:22px;font-weight:300;color:var(--color-slate);">Hero</span><span class="usage">Main hero headline</span></div>
+  <div class="row"><span class="token">--text-h1</span><span class="size">32–44px</span><span style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--color-slate);">H1 Title</span><span class="usage">Page-level titles</span></div>
+  <div class="row"><span class="token">--text-h2</span><span class="size">24–32px</span><span style="font-family:var(--font-display);font-size:16px;font-weight:500;color:var(--color-slate);">H2 Section</span><span class="usage">Section headings</span></div>
+  <div class="row"><span class="token">--text-h3</span><span class="size">22px</span><span style="font-size:14px;font-weight:600;color:var(--color-slate);">H3 Card Title</span><span class="usage">Card titles, sub-headings</span></div>
+  <div class="row"><span class="token">--text-body-lg</span><span class="size">18px</span><span style="font-size:13px;font-weight:300;color:var(--color-stone);">Body LG</span><span class="usage">Intro paragraphs</span></div>
+  <div class="row"><span class="token">--text-body</span><span class="size">16px</span><span style="font-size:12px;font-weight:400;color:var(--color-slate);">Body text</span><span class="usage">General body copy</span></div>
+  <div class="row"><span class="token">--text-sm</span><span class="size">14px</span><span style="font-size:11px;font-weight:400;color:var(--color-stone);">Small / caption</span><span class="usage">Meta, helper text</span></div>
+  <div class="row"><span class="token">--text-xs</span><span class="size">12px</span><span style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-slate);">XS LABEL</span><span class="usage">Badges, tags, eyebrows</span></div>
+  <div class="row"><span class="token">--text-btn</span><span class="size">14px</span><span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-slate);">BUTTON</span><span class="usage">All button text</span></div>
+</body>
+</html>

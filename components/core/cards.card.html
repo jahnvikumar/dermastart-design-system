@@ -1,0 +1,68 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Cards" subtitle="Standard · Feature · Stat · Inverse" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { background: var(--color-canvas); padding: 24px 28px; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-stone); margin-bottom: 8px; }
+  h3 { font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--color-slate); margin-bottom: 6px; }
+  p { font-size: 13px; color: var(--color-stone); line-height: 1.6; }
+  .stat-num { font-family: var(--font-display); font-size: 40px; font-weight: 300; color: var(--color-dune); display: block; line-height: 1; }
+  .stat-lbl { font-size: 13px; color: var(--color-stone); margin-top: 4px; display: block; }
+  .icon { width: 36px; height: 36px; color: var(--color-dune); margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const { Card } = window.DermaStartDesignSystem_1e5d5c;
+  const { createElement: h } = React;
+
+  const CheckIcon = () => h('svg', { className: 'icon', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, viewBox: '0 0 24 24' },
+    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' })
+  );
+
+  const App = () => h('div', { className: 'grid' },
+    h('div', null,
+      h('div', { className: 'lbl' }, 'Standard (hover me)'),
+      h(Card, { variant: 'standard', padding: 'sm', href: '#' },
+        h('h3', null, 'Space & Interior Design'),
+        h('p', null, 'Clinic layouts built for patient flow, hygiene standards, and your aesthetic.')
+      )
+    ),
+    h('div', null,
+      h('div', { className: 'lbl' }, 'Feature (hover me)'),
+      h(Card, { variant: 'feature', padding: 'sm' },
+        h(CheckIcon),
+        h('h3', null, 'Compliance first'),
+        h('p', null, 'We never take shortcuts on licensing or safety approvals.')
+      )
+    ),
+    h('div', null,
+      h('div', { className: 'lbl' }, 'Stat'),
+      h(Card, { variant: 'stat', padding: 'sm' },
+        h('span', { className: 'stat-num' }, '340+'),
+        h('span', { className: 'stat-lbl' }, 'Clinics launched across India')
+      )
+    ),
+    h('div', { style: { background: 'var(--color-slate)', padding: 16, borderRadius: 6 } },
+      h('div', { className: 'lbl', style: { color: 'rgba(232,213,196,0.6)' } }, 'Inverse'),
+      h(Card, { variant: 'inverse', padding: 'sm' },
+        h('p', { style: { color: 'rgba(250,247,244,0.9)', fontStyle: 'italic', fontFamily: 'var(--font-display)', fontSize: 15 } }, '"The support we needed from day one."'),
+        h('p', { style: { color: 'var(--color-blush)', fontSize: 12, marginTop: 8 } }, '— Dr. Priya Mehta, Mumbai')
+      )
+    )
+  );
+
+  ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>

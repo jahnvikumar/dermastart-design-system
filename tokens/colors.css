@@ -1,0 +1,38 @@
+/* DermaStart — Color Tokens
+ * Warm dermatology-clinic palette: nude/beige primaries,
+ * deep-slate anchor, sage trust accent.
+ */
+
+:root {
+  /* ── Primary Palette ── */
+  --color-dune:         #C9A882;   /* Brand accent — CTAs, active states */
+  --color-dune-hover:   #B5935F;   /* Dune darkened 8% — button hover */
+  --color-canvas:       #F2EDE6;   /* Page backgrounds, section fills */
+  --color-parchment:    #FAF7F4;   /* Card bgs, input fields, footer */
+  --color-slate:        #2C3A3A;   /* Primary text, headings, navbar */
+  --color-sage:         #7A9E9F;   /* Trust badges, verified icons, links */
+
+  /* ── Secondary / Support Palette ── */
+  --color-blush:        #E8D5C4;   /* Dividers, card borders, hover fills */
+  --color-stone:        #8A8078;   /* Body text, captions, meta labels */
+  --color-white:        #FFFFFF;   /* Form bgs, modals, navbar */
+  --color-error:        #C0605A;   /* Form validation errors only */
+  --color-success:      #5A8A72;   /* Confirmation, success messages */
+
+  /* ── Semantic Aliases ── */
+  --surface-page:       var(--color-canvas);
+  --surface-card:       var(--color-parchment);
+  --surface-elevated:   var(--color-white);
+  --surface-inverse:    var(--color-slate);
+
+  --text-primary:       var(--color-slate);
+  --text-secondary:     var(--color-stone);
+  --text-accent:        var(--color-dune);
+  --text-trust:         var(--color-sage);
+  --text-on-dark:       var(--color-white);
+  --text-on-dark-muted: var(--color-blush);
+
+  --border-default:     var(--color-blush);
+  --border-focus:       var(--color-dune);
+  --border-error:       var(--color-error);
+}

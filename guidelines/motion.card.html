@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x120" name="Motion & Transitions" subtitle="200ms base · card hover · button press · section reveal" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 20px; font-family: var(--font-body); }
+  .tokens { display: flex; gap: 10px; flex-wrap: wrap; }
+  .token { background: var(--color-white); border: 1px solid var(--color-blush); border-radius: var(--radius-md); padding: 10px 14px; }
+  .token-name { font-size: 10px; font-family: monospace; color: var(--color-dune); margin-bottom: 4px; font-weight: 600; }
+  .token-val { font-size: 11px; color: var(--color-slate); font-weight: 500; }
+  .token-desc { font-size: 10px; color: var(--color-stone); margin-top: 3px; }
+</style>
+</head>
+<body>
+<div class="tokens">
+  <div class="token"><div class="token-name">--transition-fast</div><div class="token-val">100ms ease</div><div class="token-desc">Button press scale</div></div>
+  <div class="token"><div class="token-name">--transition-base</div><div class="token-val">200ms ease</div><div class="token-desc">Hover, color, background</div></div>
+  <div class="token"><div class="token-name">--transition-slow</div><div class="token-val">400ms ease-out</div><div class="token-desc">Section reveal / fadeInUp</div></div>
+  <div class="token"><div class="token-name">Card hover</div><div class="token-val">translateY(−3px)</div><div class="token-desc">+ shadow-2, 200ms</div></div>
+  <div class="token"><div class="token-name">Button press</div><div class="token-val">scale(0.98)</div><div class="token-desc">100ms ease</div></div>
+  <div class="token"><div class="token-name">Reveal stagger</div><div class="token-val">80ms per child</div><div class="token-desc">IntersectionObserver 15%</div></div>
+  <div class="token"><div class="token-name">Reduced motion</div><div class="token-val">opacity only</div><div class="token-desc">No transforms, ≤200ms</div></div>
+</div>
+</body>
+</html>

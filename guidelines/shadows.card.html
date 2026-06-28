@@ -1,0 +1,41 @@
+<!-- @dsCard group="Spacing" viewport="700x130" name="Shadow Levels" subtitle="0 (flat) → 1 (card) → 2 (hover) → 3 (modal) → nav" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 24px 20px; font-family: var(--font-body); }
+  .shadows { display: flex; gap: 16px; align-items: flex-end; }
+  .shadow-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .shadow-box { width: 100%; height: 48px; background: var(--color-white); border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.04); }
+  .shadow-label { font-size: 10px; font-weight: 600; color: var(--color-stone); text-transform: uppercase; letter-spacing: 0.08em; text-align: center; }
+</style>
+</head>
+<body>
+<div class="shadows">
+  <div class="shadow-item">
+    <div class="shadow-box" style="box-shadow:none;"></div>
+    <span class="shadow-label">Level 0<br/>Flat</span>
+  </div>
+  <div class="shadow-item">
+    <div class="shadow-box" style="box-shadow:0 2px 12px rgba(44,58,58,0.06);"></div>
+    <span class="shadow-label">Level 1<br/>Card rest</span>
+  </div>
+  <div class="shadow-item">
+    <div class="shadow-box" style="box-shadow:0 6px 24px rgba(44,58,58,0.10);"></div>
+    <span class="shadow-label">Level 2<br/>Card hover</span>
+  </div>
+  <div class="shadow-item">
+    <div class="shadow-box" style="box-shadow:0 16px 48px rgba(44,58,58,0.16);"></div>
+    <span class="shadow-label">Level 3<br/>Modal</span>
+  </div>
+  <div class="shadow-item">
+    <div class="shadow-box" style="box-shadow:0 2px 16px rgba(44,58,58,0.08);"></div>
+    <span class="shadow-label">Nav<br/>Sticky</span>
+  </div>
+</div>
+</body>
+</html>

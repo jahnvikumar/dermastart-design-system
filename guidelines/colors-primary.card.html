@@ -1,0 +1,43 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Primary Palette" subtitle="Dune · Warm Canvas · Parchment · Deep Slate · Sage Mist" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { background: var(--color-canvas); padding: 20px; font-family: var(--font-body); }
+  .swatches { display: flex; gap: 12px; }
+  .swatch { flex: 1; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.06); }
+  .swatch-color { height: 80px; }
+  .swatch-info { padding: 8px 10px; background: var(--color-white); }
+  .swatch-name { font-size: 11px; font-weight: 600; color: var(--color-slate); text-transform: uppercase; letter-spacing: 0.08em; }
+  .swatch-hex { font-size: 11px; color: var(--color-stone); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="swatches">
+  <div class="swatch">
+    <div class="swatch-color" style="background:#C9A882;"></div>
+    <div class="swatch-info"><div class="swatch-name">Dune</div><div class="swatch-hex">#C9A882</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#F2EDE6;border-bottom:1px solid #E8D5C4;"></div>
+    <div class="swatch-info"><div class="swatch-name">Warm Canvas</div><div class="swatch-hex">#F2EDE6</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#FAF7F4;border-bottom:1px solid #E8D5C4;"></div>
+    <div class="swatch-info"><div class="swatch-name">Parchment</div><div class="swatch-hex">#FAF7F4</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#2C3A3A;"></div>
+    <div class="swatch-info"><div class="swatch-name">Deep Slate</div><div class="swatch-hex">#2C3A3A</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color" style="background:#7A9E9F;"></div>
+    <div class="swatch-info"><div class="swatch-name">Sage Mist</div><div class="swatch-hex">#7A9E9F</div></div>
+  </div>
+</div>
+</body>
+</html>
